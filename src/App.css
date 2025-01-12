@@ -97,7 +97,7 @@ body {
   /* Ensure message container only takes up available height after accounting for input container, and other elements */
   height: calc(100vh - 120px);
 }
-
+ !important
 .chatbot-loader-container {
   display: flex;
   justify-content: flex-start;
@@ -209,6 +209,17 @@ and the background color is #272626
   min-height: 20px;
   height: auto;
   font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.react-chatbot-kit-chat-input::-webkit-scrollbar {
+  overflow-anchor: none;
+}
+
+.react-chatbot-kit-chat-input::after {
+  content: '';
+  display: block;
+  height: 0;
 }
 
 .react-chatbot-kit-chat-input::placeholder {
