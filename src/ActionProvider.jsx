@@ -1,5 +1,6 @@
 /* eslint-disable */
 import OpenAI from "openai";
+import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const openai = new OpenAI({
