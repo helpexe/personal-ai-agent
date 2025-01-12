@@ -57,6 +57,10 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #202a38 !important;
+
+  /* Make sure everything shows? */
+  justify-content: space-between !important;
+  flex-grow: 1 !important;
 }
 
 .react-chatbot-kit-chat-header {
@@ -161,6 +165,7 @@ and the background color is #272626
   bottom: 0;
 
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
+
 }
 
 .react-chatbot-kit-chat-input-form {
