@@ -5,12 +5,16 @@ const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     const lowercase = message.toLowerCase();
     console.log(message);
-    if (lowercase.includes('hello')) {
+    if (lowercase.includes("hello")) {
       actions.handleHelloWorld();
     }
 
-    if (lowercase.includes('todos')) {
+    if (lowercase.includes("todos")) {
       actions.handleTodos();
+    }
+
+    if (lowercase.includes("chatgpt")) {
+      actions.handleChatGPTMessage(message);
     }
   };
 
@@ -19,7 +23,7 @@ const MessageParser = ({ children, actions }) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           parse: parse,
-          actions: {},
+          actions,
         });
       })}
     </div>
