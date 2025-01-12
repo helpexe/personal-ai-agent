@@ -3,6 +3,23 @@ import OpenAI from "openai";
 import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+  const MAX_MESSAGES = 20;
+  const systemInfo = {
+    role: "system",
+    content:
+      "You are a chatbot named GavinAI designed to tell an employer from FutureMakers about Gavin. Gavin is a 20-year-old computer science major (junior year) at the University of Maryland, College Park with a specialization in machine learning. Try to prioritize short responses. Please refer to yourself as GavinAI.",
+  };
+
+  const saveMessages = (messages) => {
+    localStorage.setItem("chat_messages", JSON.stringify(messages));
+  };
+
+  const saveChatContext = (context) => {
+    localStorage.setItem("chat_context", JSON.stringify(context));
+  };
+
+  const truncateMessages = (context) => {};
+
   const openai = new OpenAI({
     // apiKey: process.env.OPENAI_API_KEY,
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -13,10 +30,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHelloWorld = () => {
     const message = createChatBotMessage("Hi there!");
 
-    setState((prev) => ({
-      ...prev,
-      messages: [...prev.messages, message],
-    }));
+    setState((prev) => {
+      const updatedMessages = [...prev.messages, message];
+      saveMessages(updatedMessages);
+      return {
+        ...prev,
+        messages: [...prev.messages, message],
+      };
+    });
   };
 
   const handleChatGPTMessage = async (userMessage) => {
@@ -46,8 +67,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         ...children.props.children.props.state.chatContext,
         { role: "user", content: userMessage },
       ];
-      console.log("HELLO?????")
-      console.log(`updatedContext: ${JSON.stringify(updatedContext)}`);
+
+      console.log(`updatedContext is`);
+      console.log(updatedContext);
       setState((prevState) => {
         return {
           ...prevState,
@@ -59,10 +81,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       // console.log(conversationHistory);
 
       // Get ChatGPT response
-      console.log(`updatedContext: ${updatedContext}`);
+      // console.log(`updatedContext: ${updatedContext}`);
       const chatCompletion = await openai.chat.completions.create({
         model: "gpt-4o",
-        messages: updatedContext,
+        messages: [systemInfo, ...updatedContext],
       });
 
       const gptMessage = chatCompletion.choices[0].message.content;
@@ -91,16 +113,20 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         //     content: gptMessage,
         //   },
         // ]);
+        const updatedMessages = [...prev.messages, message];
+        const updatedContext = [
+          ...prev.chatContext,
+          {
+            role: "assistant",
+            content: gptMessage,
+          },
+        ];
+        saveMessages(updatedMessages);
+        saveChatContext(updatedContext);
         return {
           ...prev,
-          messages: [...prev.messages, message],
-          chatContext: [
-            ...prev.chatContext,
-            {
-              role: "assistant",
-              content: gptMessage,
-            },
-          ],
+          messages: updatedMessages,
+          chatContext: updatedContext,
         };
       });
 

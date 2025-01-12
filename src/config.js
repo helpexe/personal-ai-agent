@@ -24,13 +24,7 @@ const config = {
   },
   state: {
     // messages: [],
-    chatContext: [
-      {
-        role: "system",
-        content:
-          "You are a chatbot named GavinAI designed to tell an employer from FutureMakers about Gavin. Gavin is a 20-year-old computer science major (junior year) at the University of Maryland, College Park with a specialization in machine learning. Try to prioritize short responses. Please refer to yourself as GavinAI.",
-      },
-    ],
+    chatContext: [],
   },
 };
 export default config;
