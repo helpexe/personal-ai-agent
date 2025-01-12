@@ -94,6 +94,8 @@ body {
   align-self: center;
 
   /* align-items: flex-start; */
+  /* Ensure message container only takes up available height after accounting for input container, and other elements */
+  height: calc(100vh - 120px);
 }
 
 .chatbot-loader-container {
@@ -164,6 +166,7 @@ and the background color is #272626
   /* Fix input container to bottom */
   position: sticky;
   bottom: 0;
+  z-index: 10;
 
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
 
