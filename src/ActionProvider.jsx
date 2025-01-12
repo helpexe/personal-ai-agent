@@ -21,11 +21,27 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleChatGPTMessage = async (userMessage) => {
     try {
+      // Add the new user message to state first
+      setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, { role: "user", content: userMessage }],
+      }));
+
+      // Retrieve the updated conversation history from state
+      let conversationHistory;
+      setState((prev) => {
+        conversationHistory = prev.messages;
+        return prev;
+      });
+
+
+
+
       const chatCompletion = await openai.chat.completions.create({
         model: "gpt-4o",
         messages: [
-          { role: "system", content: "You are a helpful chatbot. " },
-          { role: "user", content: userMessage },
+          { role: "system", content: "You are a chatbot named GavinAI designed to tell an employer from FutureMakers about Gavin. Gavin is a 20-year-old computer science major (junior year) at the University of Maryland, Collegeg Park with a specialization in machine learning. " },
+         ...conversationHistory,
         ],
       });
 

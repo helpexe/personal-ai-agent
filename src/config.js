@@ -3,7 +3,7 @@ import BotAvatar from "./components/BotAvatar/BotAvatar";
 
 const config = {
   botName: "GavinAI",
-  initialMessages: [createChatBotMessage(`Hello world`)],
+  initialMessages: [createChatBotMessage(`Hi there! I'm GavinAI, and I'd be more than happy to tell you about Gavin and why he'd be a great fit at FutureMakers.`)],
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
   },
