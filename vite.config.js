@@ -32,9 +32,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
-  define: {
-    __APP_ENV__: process.env.VITE_OPENAI_API_KEY,
-  },
+  // define: {
+  //   __APP_ENV__: process.env.VITE_OPENAI_API_KEY,
+  // },
 });
 
 // // import { defineConfig } from 'vite'

@@ -4,7 +4,7 @@ import OpenAI from "openai";
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const openai = new OpenAI({
     // apiKey: process.env.OPENAI_API_KEY,
-    apiKey: 
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY
   });
 
   // Example handler
