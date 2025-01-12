@@ -56,8 +56,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         ...conversationHistory,
       ];
 
-      console.log("History");
-      console.log(conversationHistory);
+      // console.log("History");
+      // console.log(conversationHistory);
 
       const chatCompletion = await openai.chat.completions.create({
         model: "gpt-4o",
