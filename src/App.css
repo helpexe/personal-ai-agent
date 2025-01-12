@@ -69,6 +69,9 @@ body {
   /* Set text in middle of screen */
   display: flex;
   justify-content: center;
+
+  position: sticky;
+  top: 0;
 }
 
 .react-chatbot-kit-chat-message-container {
@@ -154,7 +157,8 @@ and the background color is #272626
   overflow: hidden;
 
   /* Fix input container to bottom */
-  position: fixed;
+  position: sticky;
+  bottom: 0;
 
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
 }
