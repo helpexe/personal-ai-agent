@@ -18,7 +18,8 @@ const MessageParser = ({ children, actions }) => {
     // }
 
     // actions.handleChatGPTMessage(message);
-    actions.handleHelloWorld(message);
+    // actions.handleHelloWorld(message);
+    actions.handleChatGPTMessage(message);
   };
 
   return (

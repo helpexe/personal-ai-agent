@@ -3,7 +3,12 @@ import BotAvatar from "./components/BotAvatar/BotAvatar";
 
 const config = {
   botName: "GavinAI",
-  initialMessages: [createChatBotMessage(`Hi there! I'm GavinAI, and I'd be more than happy to tell you about Gavin and why he'd be a great fit at FutureMakers.`)],
+  initialMessages: [
+    // createChatBotMessage(
+    //   `Hi there! I'm GavinAI, and I'd be more than happy to tell you about Gavin and why he'd be a great fit at FutureMakers.`
+    // ),
+    createChatBotMessage("hi"),
+  ],
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
   },
@@ -18,7 +23,14 @@ const config = {
     },
   },
   state: {
-    messages: [],
-  }
+    // messages: [],
+    chatContext: [
+      {
+        role: "system",
+        content:
+          "You are a chatbot named GavinAI designed to tell an employer from FutureMakers about Gavin. Gavin is a 20-year-old computer science major (junior year) at the University of Maryland, College Park with a specialization in machine learning. Try to prioritize short responses. Please refer to yourself as GavinAI.",
+      },
+    ],
+  },
 };
 export default config;
