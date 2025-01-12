@@ -17,5 +17,8 @@ const config = {
       backgroundColor: "purple",
     },
   },
+  state: {
+    messages: [],
+  }
 };
 export default config;
