@@ -8,7 +8,7 @@ const config = {
     //   `Hi there! I'm GavinAI, and I'd be more than happy to tell you about Gavin and why he'd be a great fit at FutureMakers.`
     // ),
     createChatBotMessage(
-      "Hi, I'm GavinAI! I'd love to tell you about Gavin and his background. Feel free to ask questions about his teaching, programming, or honors research experience!"
+      "Hi, I'm GavinAI! I'd love to tell you about Gavin and his background. Would you like to know more about his background?"
     ),
   ],
   customComponents: {

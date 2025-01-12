@@ -101,7 +101,7 @@ body {
   /* Ensure message container only takes up available height after accounting for input container, and other elements */
   height: calc(100vh - 120px);
 }
- !important
+ 
 .chatbot-loader-container {
   display: flex;
   justify-content: flex-start;
