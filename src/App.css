@@ -152,6 +152,11 @@ and the background color is #272626
   min-height: 96px !important;
   max-height: 200px;
   overflow: hidden;
+
+  /* Fix input container to bottom */
+  position: fixed;
+
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .react-chatbot-kit-chat-input-form {
@@ -256,6 +261,10 @@ and the background color is #272626
     margin-bottom: 100px; /* Ensure space for input container */
     padding: 0 10px;
     max-width: 100%; /* Adjust message width to fit screen */
+    flex: none;
+    overflow-y: auto;
+    height: calc(100vh - 120px); /* Subtract the input container height */
+    padding-bottom: 10px; /* Ensure spacing at the bottom */
   }
 
   .react-chatbot-kit-chat-bot-message,
