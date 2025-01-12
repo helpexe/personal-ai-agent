@@ -53,8 +53,11 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           content:
             "You are a chatbot named GavinAI designed to tell an employer from FutureMakers about Gavin. Gavin is a 20-year-old computer science major (junior year) at the University of Maryland, Collegeg Park with a specialization in machine learning. ",
         },
-        ...conversationHistory
+        ...conversationHistory,
       ];
+
+      console.log("History");
+      console.log(conversationHistory);
 
       const chatCompletion = await openai.chat.completions.create({
         model: "gpt-4o",
@@ -69,19 +72,19 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
       setState((prev) => ({
         ...prev,
-        messages: [...prev.messages,
+        messages: [
+          ...prev.messages,
           {
-            role: 'assistant',
-            content: gptMessage
-          }
-        ]
+            role: "assistant",
+            content: gptMessage,
+          },
+        ],
       }));
-      
+
       setState((prev) => ({
         ...prev,
         messages: [...prev.messages, message],
       }));
-
 
       // setState((prev) => ({
       //   ...prev,
