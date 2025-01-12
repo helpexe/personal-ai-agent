@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -24,11 +24,10 @@ body {
 
 #main-container {
   height: 100%;
-  width: 100%; 
+  width: 100%;
 
   margin: 0 auto;
   box-sizing: border-box;
-  
 }
 
 #main-container > div {
@@ -58,7 +57,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #202a38 !important;
-
 }
 
 .react-chatbot-kit-chat-header {
@@ -68,13 +66,10 @@ body {
   font-weight: normal !important;
   text-align: center !important;
 
-  
-
   /* Set text in middle of screen */
   display: flex;
   justify-content: center;
 }
-
 
 .react-chatbot-kit-chat-message-container {
   flex: 1;
@@ -85,13 +80,27 @@ body {
 
   /*  #08587d, #1b1f3b */
   background-color: #202a38 !important;
+
+  /* Make sure sizing isn't too large */
+  max-width: 850px;
+  align-self: center;
+
+  /* align-items: flex-start; */
 }
+
+.chatbot-loader-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
 
 .react-chatbot-kit-chat-bot-message {
   width: auto !important;
   align-self: flex-start;
   text-align: left;
   margin-left: 0.25rem !important;
+  color: #333333 !important;
+  font-size: 15.5px !important;
 }
 
 .react-chatbot-kit-user-chat-message {
@@ -99,6 +108,15 @@ body {
   align-self: flex-end;
   text-align: left;
   margin-right: 0.25rem !important;
+
+  background-color: #0056b3 !important;
+  color: #ffffff !important;
+  font-size: 15.5px !important;
+}
+
+.react-chatbot-kit-user-chat-message-arrow {
+  /* background-color: #0056b3 !important; */
+  border-left: 8px solid #0056b3 !important;
 }
 
 /* Input container things*/
@@ -122,7 +140,6 @@ and the background color is #272626
   background-color: #2f3d50;
   border-radius: 20px !important;
 
-
   width: 48rem !important;
   margin-bottom: 30px;
   justify-content: space-between !important;
@@ -142,8 +159,8 @@ and the background color is #272626
   width: 100% !important;
   height: 100% !important;
   display: flex !important;
-  align-items: flex-end !important; 
-  flex: 1 !important; 
+  align-items: flex-end !important;
+  flex: 1 !important;
   position: relative !important;
   border: none;
   outline: none;
@@ -157,7 +174,7 @@ and the background color is #272626
   flex: 1;
 
   margin: 0;
-  padding: 10px 15px !important; 
+  padding: 10px 15px !important;
   padding-right: 45px !important;
   /* border: 1px solid #ccc !important; */
   /* border-radius: 50px !important; */
@@ -174,7 +191,7 @@ and the background color is #272626
   display: block;
   min-height: 20px;
   height: auto;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .react-chatbot-kit-chat-input::placeholder {
@@ -188,11 +205,11 @@ and the background color is #272626
   margin-bottom: 2.5px;
   background-color: #007bff !important;
   color: white;
-  border: none; 
+  border: none;
 
   /* Used to be 20px */
   border-radius: 50% !important;
-  
+
   font-size: 16px;
   transition: background-color 0.3s ease;
 
@@ -213,5 +230,3 @@ and the background color is #272626
 .react-chatbot-kit-chat-btn-send:hover {
   background-color: #0056b3 !important;
 }
-
-

@@ -7,7 +7,9 @@ const config = {
     // createChatBotMessage(
     //   `Hi there! I'm GavinAI, and I'd be more than happy to tell you about Gavin and why he'd be a great fit at FutureMakers.`
     // ),
-    createChatBotMessage("hi"),
+    createChatBotMessage(
+      "Hi, I'm GavinAI! I'd love to tell you about Gavin and his background. Feel free to ask questions about his teaching, programming, or honors research experience!"
+    ),
   ],
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
@@ -15,8 +17,9 @@ const config = {
   customStyles: {
     // Override chatbot message styles
     botMessageBox: {
-      backgroundColor: "purple",
+      backgroundColor: "#e0e0e0",
     },
+
     // Override chat button styles
     chatButton: {
       backgroundColor: "purple",
