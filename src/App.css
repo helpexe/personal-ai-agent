@@ -93,7 +93,6 @@ body {
   justify-content: flex-start;
 }
 
-
 .react-chatbot-kit-chat-bot-message {
   width: auto !important;
   align-self: flex-start;
@@ -229,4 +228,92 @@ and the background color is #272626
 
 .react-chatbot-kit-chat-btn-send:hover {
   background-color: #0056b3 !important;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  #root,
+  #main-container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .react-chatbot-kit-chat-container {
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .react-chatbot-kit-chat-inner-container {
+    padding: 5px;
+    height: calc(100% - 120px); /* Account for input container */
+  }
+
+  .react-chatbot-kit-chat-message-container {
+    margin-bottom: 100px; /* Ensure space for input container */
+    padding: 0 10px;
+    max-width: 100%; /* Adjust message width to fit screen */
+  }
+
+  .react-chatbot-kit-chat-bot-message,
+  .react-chatbot-kit-user-chat-message {
+    font-size: 14px !important; /* Smaller font size for messages */
+    width: auto !important; /* Messages take full available width */
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* Adjust input container for small screens */
+  .react-chatbot-kit-chat-input-container {
+    width: calc(100% - 20px) !important; /* Fit within screen */
+    margin: 0 auto;
+    padding: 10px;
+    flex-direction: row !important; /* Align input and button side-by-side */
+    align-items: center;
+    min-height: 60px !important; /* Smaller input height */
+    max-height: 120px !important;
+  }
+
+  .react-chatbot-kit-chat-input {
+    font-size: 14px !important; /* Reduce input font size */
+    padding: 8px !important; /* Compact padding */
+    padding-right: 50px !important; /* Space for send button */
+    min-height: 40px; /* Smaller input height */
+    line-height: 1.2 !important; /* Compact line height */
+  }
+
+  .react-chatbot-kit-chat-btn-send {
+    width: 35px !important; /* Smaller send button */
+    height: 35px !important;
+    margin: 0;
+    margin-left: 5px;
+  }
+
+  .react-chatbot-kit-chat-btn-send-icon {
+    min-width: 12px !important;
+    min-height: 12px !important;
+  }
+}
+
+/* Extra adjustments for very small screens (e.g., 480px width or less) */
+@media (max-width: 480px) {
+  .react-chatbot-kit-chat-input-container {
+    min-height: 50px !important;
+    padding: 5px;
+    flex-direction: row !important;
+  }
+
+  .react-chatbot-kit-chat-input {
+    font-size: 12px !important;
+    padding: 6px !important;
+    line-height: 1.2 !important;
+  }
+
+  .react-chatbot-kit-chat-btn-send {
+    width: 30px !important;
+    height: 30px !important;
+  }
 }
