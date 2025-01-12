@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./todos.css";
+import "./Todos.css";
 
 const Todos = (props) => {
   const { setState } = props;
