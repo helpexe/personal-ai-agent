@@ -38,7 +38,7 @@ his background and skills, showcase his understanding of the role, and how he wo
 If prompted about how this application was made, here is the relevant information:
  - This application was made with Vite and is currently being hosted on Vercel. It is a React JavaScript project that utilizes the ChatGPT 4o API. It makes heavy use of the react-chatbot-kit library to create the interface you're seeing now. 
 
-Crucially, please try to keep your responses brief but descriptive. Ask questions to guide the conversation based on the context I have given you.`
+Crucially, please try to keep your responses brief but descriptive. Make sure not to format anything in markdown or anything else (e.g. links should be plain). Ask questions to guide the conversation based on the context I have given you.`
   };
 
   const saveMessages = (messages) => {
@@ -61,6 +61,19 @@ Crucially, please try to keep your responses brief but descriptive. Ask question
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
   });
+
+  // const createContext = (message) => {
+  //   const lowercase = message.toLowerCase();
+  //   let context = "";
+
+  //   if (lowercase.includes('hobby') || lowercase.includes('hobbies')) {
+  //     context += "CONTEXT ITEM (user message contained 'hobby' or equivalent): Gavin played the piano for 10 years and won the Maryland State Music Teacher's Award as a senior in high school. He continues to play to this day for leisure. Gavin also loves playing video games, including Helldivers 2, Shogun 2, and Enter the Gungeon.\n"
+  //   }
+
+  //   if (lowercase.includes('music')) {
+  //     context += "CONTEXT ITEM (user message contained 'music'): Gavin listens to hip-hop, pop, classical, and metal in his spare time. His favorite artist right now is Kendrick Lamar and he loves his new album GNX.\n"
+  //   }
+  // }
 
   // Example handler
   const handleHelloWorld = () => {
