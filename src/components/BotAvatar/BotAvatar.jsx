@@ -1,6 +1,5 @@
 import "./BotAvatar.css";
 import React from "react";
-// import gavicon from "../gavicon.jpg";
 
 const BotAvatar = () => {
   return (
